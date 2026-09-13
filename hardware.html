@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Tech - المنتجات والعتاد</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-color: #0b0f19;
+            background-image: radial-gradient(circle at 50% 10%, #1a233a 0%, #0b0f19 70%);
+            background-attachment: fixed;
+            background-size: cover;
+            color: #f1f1f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .custom-card {
+            background-color: rgba(26, 26, 26, 0.9);
+            border: 1px solid #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+        .custom-card:hover {
+            border-color: #0dcaf0;
+            box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
+        }
+        .nav-pills .nav-link { color: #ccc; font-size: 0.85rem; }
+        .nav-pills .nav-link:hover, .nav-pills .nav-link.active { background-color: #0dcaf0; color: #000; font-weight: bold; }
+        .product-card { background-color: #222; border: 1px solid #444; transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-5px); border-color: #0dcaf0; }
+        .text-clear-muted { color: #cfcfcf !important; }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4 mb-5" style="max-width: 800px;">
+        
+        <!-- شريط التنقل الشامل -->
+        <div class="custom-card p-3 mb-4 text-center">
+            <h3 class="text-info mb-3"><i class="bi bi-apple"></i> Apple Tech</h3>
+            <ul class="nav nav-pills nav-fill justify-content-center gap-1">
+                <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                <li class="nav-item"><a class="nav-link active" href="hardware.html">المنتجات</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">دخول وحساب</a></li>
+            </ul>
+        </div>
+
+        <!-- قسم المنتجات والعتاد -->
+        <div class="custom-card p-4 mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="text-info m-0"><i class="bi bi-laptop"></i> عتاد ومنتجات أبل المتكاملة</h4>
+                <span class="badge bg-info text-dark fs-6">السلة: <span id="cartCount">0</span> منتجات</span>
+            </div>
+            <p class="text-clear-muted small mb-4">اختر جهازك المفضّل وتصفح تفاصيله أو احجزه مباشرة:</p>
+            
+            <div class="row g-3">
+                
+                <!-- المنتج 1 -->
+                <div class="col-md-4">
+                    <div class="card product-card text-light h-100">
+                        <img src="images/a.jpg" class="card-img-top" alt="MacBook Pro" style="height: 140px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info fs-6">MacBook Pro M3</h5>
+                            <p class="card-text small text-clear-muted flex-grow-1">أداء مذهل بشريحة M3 Pro وسعة تخزين عالية.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="text-warning fw-bold">$1850</span>
+                                <button class="btn btn-sm btn-outline-info" onclick="showDetails('MacBook Pro M3', '$1850', 'شاشة Liquid Retina XDR مقاس 14 بوصة، شريحة M3 Pro، ذاكرة موحدة 18GB، وسعة تخزين 512GB SSD.')">التفاصيل</button>
+                            </div>
+                            <button class="btn btn-sm btn-success w-100 mt-2" onclick="bookAndAddToCart('MacBook Pro M3', '$1850')"><i class="bi bi-bag-check-fill"></i> احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المنتج 2 -->
+                <div class="col-md-4">
+                    <div class="card product-card text-light h-100">
+                        <img src="images/b.jpg" class="card-img-top" alt="iPhone 15 Pro" style="height: 140px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info fs-6">iPhone 15 Pro Max</h5>
+                            <p class="card-text small text-clear-muted flex-grow-1">تصميم من التيتانيوم مع كاميرا تقريب تطوري.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="text-warning fw-bold">$1200</span>
+                                <button class="btn btn-sm btn-outline-info" onclick="showDetails('iPhone 15 Pro Max', '$1200', 'شاشة Super Retina XDR مع ProMotion، شريحة A17 Pro الخارقة، كاميرا 48MP.')">التفاصيل</button>
+                            </div>
+                            <button class="btn btn-sm btn-success w-100 mt-2" onclick="bookAndAddToCart('iPhone 15 Pro Max', '$1200')"><i class="bi bi-bag-check-fill"></i> احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المنتج 3 -->
+                <div class="col-md-4">
+                    <div class="card product-card text-light h-100">
+                        <img src="images/d.jpg" class="card-img-top" alt="iPad Pro" style="height: 140px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info fs-6">iPad Pro M4</h5>
+                            <p class="card-text small text-clear-muted flex-grow-1">النحيف للغاية مع شاشة Ultra Retina XDR.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="text-warning fw-bold">$999</span>
+                                <button class="btn btn-sm btn-outline-info" onclick="showDetails('iPad Pro M4', '$999', 'أرق جهاز أبل على الإطلاق، مزود بشريحة M4 وتقنية عرض OLED المتقدمة.')">التفاصيل</button>
+                            </div>
+                            <button class="btn btn-sm btn-success w-100 mt-2" onclick="bookAndAddToCart('iPad Pro M4', '$999')"><i class="bi bi-bag-check-fill"></i> احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المنتج 4 -->
+                <div class="col-md-4">
+                    <div class="card product-card text-light h-100">
+                        <img src="images/e.jpg" class="card-img-top" alt="Apple Watch" style="height: 140px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info fs-6">Apple Watch Ultra 2</h5>
+                            <p class="card-text small text-clear-muted flex-grow-1">ساعة المغامرات والرياضات القصوى.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="text-warning fw-bold">$799</span>
+                                <button class="btn btn-sm btn-outline-info" onclick="showDetails('Apple Watch Ultra 2', '$799', 'هيكل متين من التيتانيوم مقاس 49 مم، عمر بطارية يصل إلى 72 ساعة.')">التفاصيل</button>
+                            </div>
+                            <button class="btn btn-sm btn-success w-100 mt-2" onclick="bookAndAddToCart('Apple Watch Ultra 2', '$799')"><i class="bi bi-bag-check-fill"></i> احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المنتج 5 -->
+                <div class="col-md-4">
+                    <div class="card product-card text-light h-100">
+                        <img src="images/f.jpg" class="card-img-top" alt="AirPods Pro" style="height: 140px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info fs-6">AirPods Pro 2</h5>
+                            <p class="card-text small text-clear-muted flex-grow-1">إلغاء نشط للضوضاء وصوت غامر نقي.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="text-warning fw-bold">$249</span>
+                                <button class="btn btn-sm btn-outline-info" onclick="showDetails('AirPods Pro 2', '$249', 'شريحة H2 لإلغاء ضوضاء أقوى بمرتين، صوت مكاني مخصص، علبة شحن MagSafe.')">التفاصيل</button>
+                            </div>
+                            <button class="btn btn-sm btn-success w-100 mt-2" onclick="bookAndAddToCart('AirPods Pro 2', '$249')"><i class="bi bi-bag-check-fill"></i> احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المنتج 6 -->
+                <div class="col-md-4">
+                    <div class="card product-card text-light h-100">
+                        <img src="images/g.jpg" class="card-img-top" alt="iMac" style="height: 140px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-info fs-6">iMac 24 M3</h5>
+                            <p class="card-text small text-clear-muted flex-grow-1">كمبيوتر مكتبي متكامل بتصميم مذهل وألوان زاهية.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="text-warning fw-bold">$1299</span>
+                                <button class="btn btn-sm btn-outline-info" onclick="showDetails('iMac 24 M3', '$1299', 'شاشة Retina 4.5K مقاس 24 بوصة، شريحة M3 القوية، كاميرا FaceTime HD.')">التفاصيل</button>
+                            </div>
+                            <button class="btn btn-sm btn-success w-100 mt-2" onclick="bookAndAddToCart('iMac 24 M3', '$1299')"><i class="bi bi-bag-check-fill"></i> احجز الآن</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <!-- قسم السلة والمنتجات المحجوزة -->
+        <div class="custom-card p-4 mb-4" id="cartSection">
+            <h4 class="text-info mb-3"><i class="bi bi-cart3"></i> السلة والطلبات المحجوزة</h4>
+            <div id="cartItemsList">
+                <p class="text-clear-muted text-center py-3">السلة فارغة حالياً. قم بحجز أي منتج لتظهر هنا مع خيار الإلغاء.</p>
+            </div>
+        </div>
+
+        <footer class="text-center text-clear-muted mb-4">
+            <small>جميع الحقوق محفوظة © Apple Tech 2026</small>
+        </footer>
+
+    </div>
+
+    <!-- نافذة تفاصيل المنتج -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title text-info" id="modalTitle">عنوان المنتج</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-warning fw-bold fs-5" id="modalPrice">السعر</p>
+                    <p class="text-clear-muted" id="modalDesc">التفاصيل الكاملة...</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- إشعار الـ Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+        <div id="cartToast" class="toast" role="alert">
+            <div class="toast-header bg-success text-white">
+                <strong class="me-auto">إدارة السلة</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body text-dark fw-bold bg-light" id="toastMsg">تمت العملية بنجاح!</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let cart = [];
+
+        function showDetails(title, price, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = "السعر: " + price;
+            document.getElementById('modalDesc').innerText = desc;
+            var myModal = new bootstrap.Modal(document.getElementById('productModal'));
+            myModal.show();
+        }
+
+        function bookAndAddToCart(name, price) {
+            cart.push({ id: Date.now(), name: name, price: price });
+            updateCartUI();
+            
+            // الانتقال السلس إلى قسم السلة بالأسفل
+            document.getElementById('cartSection').scrollIntoView({ behavior: 'smooth' });
+
+            document.getElementById('toastMsg').innerText = "تم حجز (" + name + ") وإضافته للسلة بنجاح!";
+            var toast = new bootstrap.Toast(document.getElementById('cartToast'));
+            toast.show();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+            document.getElementById('toastMsg').innerText = "تم إلغاء حجز المنتج وحذفه من السلة!";
+            var toast = new bootstrap.Toast(document.getElementById('cartToast'));
+            toast.show();
+        }
+
+        function updateCartUI() {
+            document.getElementById('cartCount').innerText = cart.length;
+            let listContainer = document.getElementById('cartItemsList');
+            
+            if (cart.length === 0) {
+                listContainer.innerHTML = '<p class="text-clear-muted text-center py-3">السلة فارغة حالياً. قم بحجز أي منتج لتظهر هنا مع خيار الإلغاء.</p>';
+                return;
+            }
+
+            let html = '<ul class="list-group list-group-flush bg-transparent">';
+            cart.forEach(item => {
+                html += `<li class="list-group-item bg-dark text-light d-flex justify-content-between align-items-center border-secondary mb-2 rounded">
+                    <div>
+                        <span class="fw-bold text-info">${item.name}</span> 
+                        <span class="text-warning ms-2">${item.price}</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${item.id})">
+                        <i class="bi bi-trash"></i> إلغاء وحذف
+                    </button>
+                </li>`;
+            });
+            html += '</ul>';
+            listContainer.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
